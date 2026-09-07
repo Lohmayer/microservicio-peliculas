@@ -1,15 +1,39 @@
 package com.duoc.peliculas;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "PELICULAS")
 public class Pelicula {
 
+    @Id
+    @Column(name = "ID")
     private int id;
+
+    @Column(name = "TITULO")
     private String titulo;
+
+    @Column(name = "ANIO")
     private int anio;
+
+    @Column(name = "DIRECTOR")
     private String director;
+
+    @Column(name = "GENERO")
     private String genero;
+
+    @Column(name = "SINOPSIS")
     private String sinopsis;
 
-    public Pelicula(int id, String titulo, int anio, String director, String genero, String sinopsis) {
+    
+    public Pelicula() {
+    }
+
+    public Pelicula(int id, String titulo, int anio,
+                    String director, String genero, String sinopsis) {
         this.id = id;
         this.titulo = titulo;
         this.anio = anio;
